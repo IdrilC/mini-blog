@@ -1,0 +1,5 @@
+ar_article:
+    resource: "@ARArticleBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
