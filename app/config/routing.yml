@@ -1,3 +1,8 @@
+ar_user:
+    resource: "@ARUserBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 ar_admin:
     resource: "@ARAdminBundle/Controller/"
     type:     annotation
@@ -8,3 +13,10 @@ ar_article:
     type:     annotation
     prefix:   /
 
+# Cette route sera gérée automatique par Symfony. Il faut juste la déclarer.
+login_check:
+    pattern: /login_check
+
+# Cette route sera gérée automatiquement par Symfony. Il faut juste la déclarer.
+logout:
+    pattern: /logout
