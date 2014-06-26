@@ -1,4 +1,12 @@
 {% extends '::base.html.twig' %}
 
-
 {# menu #}
+{% block header %}
+    <div class="page-header">
+        <h1>Administration</h1>
+    </div>
+
+    <ul class="pager">
+        <li class="previous"><a href="{{ path('admin') }}">&larr; Accueil</a></li>
+    </ul>
+{% endblock %}

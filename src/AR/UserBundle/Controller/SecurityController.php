@@ -11,7 +11,7 @@ use Symfony\Component\Security\Core\SecurityContextInterface;
 class SecurityController extends Controller
 {
     /**
-     * @Route("/login")
+     * @Route("/login", name="login" )
      * @Template()
      */
     public function loginAction()

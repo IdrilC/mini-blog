@@ -9,11 +9,15 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/")
+     * @Route("/", name="home")
      * @Template()
      */
     public function indexAction()
     {
-        return array('name' => 'Aliette');
+        $em = $this->getDoctrine()->getManager();
+        $repository = $em->getRepository('ARArticleBundle:Article');
+        $articles = $repository->findAll();
+
+        return array('articles' => $articles);
     }
 }

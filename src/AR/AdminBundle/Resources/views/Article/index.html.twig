@@ -3,7 +3,7 @@
 {% block body -%}
     <h1>Article list</h1>
 
-    <table class="records_list">
+    <table class="records_list table table-striped">
         <thead>
             <tr>
                 <th>Id</th>
@@ -21,25 +21,15 @@
                 <td>{{ article.text }}</td>
                 <td>{% if article.date %}{{ article.date|date('Y-m-d H:i:s') }}{% endif %}</td>
                 <td>
-                <ul>
-                    <li>
-                        <a href="{{ path('article_show', { 'id': article.id }) }}">show</a>
-                    </li>
-                    <li>
-                        <a href="{{ path('article_edit', { 'id': article.id }) }}">edit</a>
-                    </li>
-                </ul>
+                    <a class="btn btn-default" href="{{ path('article_show', { 'id': article.id }) }}">Voir</a>
+                    <a class="btn btn-default" href="{{ path('article_edit', { 'id': article.id }) }}">Editer</a>
                 </td>
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-        <ul>
-        <li>
-            <a href="{{ path('article_new') }}">
-                Create a new entry
-            </a>
-        </li>
-    </ul>
-    {% endblock %}
+    <a class="btn btn-success" href="{{ path('article_new') }}">
+        Nouvel article
+    </a>
+{% endblock %}
